@@ -1,0 +1,12 @@
+  def self.check_value_in_type_area_list(type_area,type,condition,suggestion_for_using)
+      type_area_list = TYPE_AREA_LIST if type
+      type_area_list = CURRENT_OBJECT_STATE_LIST if condition
+      type_area_list = USING_SITE_SUGGESTION_LIST if suggestion_for_using
+      type_area_list.each do |tarea|
+         if (tarea[:name].eql?(type_area) || tarea[:name].eql?(Unicode::capitalize(type_area)))
+            return true
+         end
+      end
+
+      return false
+   end
