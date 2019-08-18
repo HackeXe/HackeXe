@@ -1,0 +1,156 @@
+bulychev_ay@bulychevay-desktop:~/WORK/workflow/sokol_dev$ bundle update
+Your Gemfile lists the gem translit (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+Your Gemfile lists the gem leaflet-rails (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+Your Gemfile lists the gem activerecord-postgis-adapter (~> 3.1.4) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+Your Gemfile lists the gem rgeo-geojson (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+Fetching gem metadata from https://rubygems.org/...........
+Fetching version metadata from https://rubygems.org/...
+Fetching dependency metadata from https://rubygems.org/..
+Resolving dependencies...................................
+Using rake 12.3.3 (was 12.3.2)
+Using concurrent-ruby 1.1.5 (was 1.1.4)
+Using json 1.8.6
+Using minitest 5.11.3
+Using thread_safe 0.3.6
+Using builder 3.2.3
+Using erubis 2.7.0
+Using mini_portile2 2.4.0
+Using crass 1.0.4
+Using rack 1.6.11
+Using mini_mime 1.0.2 (was 1.0.1)
+Using arel 6.0.4
+Using bundler 1.15.1
+Using thor 0.19.4
+Using hike 1.2.3
+Using multi_json 1.13.1
+Using tilt 1.4.1
+Using pg 0.20.0
+Using libv8 3.16.14.19 (x86_64-linux)
+Using ref 2.0.0
+Using rb-fsevent 0.10.3
+Using ffi 1.11.1 (was 1.10.0)
+Using execjs 2.7.0
+Using temple 0.8.1 (was 0.8.0)
+Using sexp_processor 4.12.1 (was 4.11.0)
+Using turbolinks-source 5.2.0
+Using coffee-script-source 1.12.2
+Using babel-source 5.8.35
+Using connection_pool 2.2.2
+Using will_paginate 3.0.12
+Using bcrypt 3.1.13 (was 3.1.12)
+Using kgio 2.11.2
+Using raindrops 0.19.0
+Using rubyzip 1.0.0
+Using ruby-ole 1.2.12.2 (was 1.2.12.1)
+Using wannabe_bool 0.7.1
+Using climate_control 0.2.0
+Using mime-types-data 3.2019.0331 (was 3.2018.0812)
+Using mimemagic 0.3.0
+Using awesome_print 1.8.0
+Using logger 1.3.0
+Using ruby-progressbar 1.10.1 (was 1.10.0)
+Using jsonapi-renderer 0.2.2 (was 0.2.0)
+Using redis 4.1.2 (was 4.1.0)
+Using hiredis 0.6.3
+Using backports 3.15.0 (was 3.11.4)
+Using multi_xml 0.6.0
+Using excon 0.66.0 (was 0.62.0)
+Using formatador 0.2.5
+Using ipaddress 0.8.3
+Using xml-simple 1.1.5
+Using dry-inflector 0.1.2
+Using CFPropertyList 2.3.6
+Using optimist 3.0.0
+Using xmlrpc 0.3.0
+Using htmlentities 4.3.4
+Using ruby_dig 0.0.2
+Using chronic 0.10.2
+Using timeliness 0.3.10 (was 0.3.8)
+Using translit 0.1.5
+Using mono_logger 1.1.0
+Using raabro 1.1.6
+Using smarter_csv 1.2.6
+Using redcarpet 2.3.0
+Using rgeo 0.6.0
+Using ruby-rc4 0.1.5
+Using Ascii85 1.0.3
+Using afm 0.2.2
+Using hashery 2.1.2
+Using ttfunk 1.5.1
+Using sambal 0.2.2
+Using rdoc 4.3.0
+Using byebug 11.0.1 (was 10.0.2)
+Using unicode 0.4.4.4
+Using debug_inspector 0.0.3
+Fetching spring 2.1.0 (was 2.0.2)
+
+
+Your user account isn't allowed to install to the system RubyGems.
+  You can cancel this installation and run:
+
+      bundle install --path vendor/bundle
+
+  to install the gems into ./vendor/bundle/, or you can enter your password
+  and install the bundled gems to RubyGems using sudo.
+
+  Password: 
+Installing spring 2.1.0 (was 2.0.2)
+Using rspec-support 3.8.2 (was 3.8.0)
+Using diff-lcs 1.3
+Using populator 1.0.0
+Using daemons 1.3.1
+Using eventmachine 1.2.7
+Using public_suffix 3.1.1 (was 3.0.3)
+Using regexp_parser 1.6.0 (was 1.3.0)
+Using spork 1.0.0rc4
+Using i18n 0.9.5
+Using tzinfo 1.2.5
+Using nokogiri 1.10.4 (was 1.10.1)
+Using rack-test 0.6.3
+Using rack-protection 1.5.5
+Using vegas 0.1.11
+Using mail 2.7.1
+Using foreman 0.85.0
+Using sprockets 2.12.5
+Using therubyracer 0.12.3
+Using rb-inotify 0.10.0
+Using childprocess 0.9.0
+Using uglifier 4.1.20
+Using coffee-react 4.0.1
+Using haml 5.1.2 (was 5.0.4)
+Using slim 3.0.9
+Using ruby_parser 3.13.1 (was 3.12.0)
+Using turbolinks 5.2.0
+Using coffee-script 2.4.1
+Using babel-transpiler 0.7.0
+Using unicorn 5.5.1 (was 5.4.1)
+Using zip-zip 0.3
+Using spreadsheet 1.2.4 (was 1.1.9)
+Using cocaine 0.5.8
+Using mime-types 3.2.2
+Using readthis 2.2.0
+Using redis-namespace 1.6.0
+Using fog-core 1.45.0
+Using fission 0.5.0
+Using whenever 1.0.0 (was 0.10.0)
+Using rgeo-geojson 0.4.3
+Using combine_pdf 1.0.16 (was 1.0.15)
+Using pdf-reader 2.2.1 (was 2.2.0)
+Using sdoc 0.4.2
+Using binding_of_caller 0.8.0
+The latest bundler is 2.0.2, but you are currently running 1.15.1.
+To update, run `gem install bundler`
+Gem::InstallError: spring requires Ruby version >= 2.4.0.
+An error occurred while installing spring (2.1.0), and Bundler cannot continue.
+Make sure that `gem install spring -v '2.1.0'` succeeds before bundling.
+
+In Gemfile:
+  spring
