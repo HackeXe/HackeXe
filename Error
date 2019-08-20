@@ -1,3 +1,10 @@
+  if invest_area[:area_type] == 1     # инвест объект
+
+            invest_object = prepare_invest_object_json_part(invest_area, addr)
+            invest_object_list << prepare_suggestions_for_using_list(invest_object)
+            invest_object_list << prepare_property_types_list(invest_object)
+ 
+ 
  #Метод возвращает поля
       def self.prepare_suggestions_for_using_list(obj)
          list = USING_SITE_SUGGESTION_LIST
