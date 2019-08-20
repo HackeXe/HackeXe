@@ -1,12 +1,24 @@
-  def self.check_value_in_type_area_list(type_area,type,condition,suggestion_for_using)
-      type_area_list = TYPE_AREA_LIST if type
-      type_area_list = CURRENT_OBJECT_STATE_LIST if condition
-      type_area_list = USING_SITE_SUGGESTION_LIST if suggestion_for_using
-      type_area_list.each do |tarea|
-         if (tarea[:name].eql?(type_area) || tarea[:name].eql?(Unicode::capitalize(type_area)))
-            return true
-         end
+ #Метод возвращает поля
+      def self.prepare_suggestions_for_using_list(obj)
+         list = USING_SITE_SUGGESTION_LIST
+            list.each do |suggestion|
+               byebug
+               next if obj[:data].keys.include?(:"#{suggestion[:name_eng]}")
+               obj[:data][:"#{suggestion[:name_eng]}"]  = prepare_json_part("#{suggestion[:name]}",
+                                                                        "#{suggestion[:name_eng].gsub('_',' ').capitalize}","-",false,"","text")
+            end
+         byebug
+         return obj
       end
 
-      return false
-   end
+      def self.prepare_property_types_list(obj)
+         types_list = OWNERSHIP_TYPE_LIST
+         types_list.each do |property_type|
+            byebug
+            next if obj[:data].keys.include?(:"#{property_type[:name_eng]}")
+            obj[:data][:"#{property_type[:name_eng]}"]  = prepare_json_part("#{property_type[:name]}",
+                                                                         "#{property_type[:name_eng].gsub('_',' ').capitalize}","-",false,"","text")
+         end
+         byebug
+         return obj
+      end
