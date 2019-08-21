@@ -1,32 +1,76 @@
-  if invest_area[:area_type] == 1     # инвест объект
+ def self.generate_common_json(from_ftp: nil)
+      invest_area_list = InvestArea.all
 
-            invest_object = prepare_invest_object_json_part(invest_area, addr)
-            invest_object_list << prepare_suggestions_for_using_list(invest_object)
-            invest_object_list << prepare_property_types_list(invest_object)
-            
-  #4-5 строка ДУБЛИРУЮЩИЕ?
- 
- #Метод возвращает поля
-      def self.prepare_suggestions_for_using_list(obj)
+      invest_object_list = []
+      power_object_list = []
+      field_object_list = []
+
+      invest_area_list.each do |invest_area|
+         addr = get_polygon_info(invest_area)
+
+         begin
+
+            if (addr.to_s.exclude?("район") & (addr.present?)&(addr[addr.length-2..addr.length-1].eql?("ий")))
+               addr = addr + " район"
+            else
+               if (addr.to_s.include?("жгорье") & addr.to_s.exclude?("ородской"))
+                  addr = "Городской округ ЗАТО " + addr
+               else
+                  addr = "Городской округ " + addr
+               end
+            end
+
+         rescue
+
+         end
+
+         if invest_area[:area_type] == 1     # инвест объект
+
+            invest_object = prepare_invest_object_json_part(invest_area, addr)  
+            invest_object_list << prepare_suggestions_for_using_list(invest_object) #THIS?
+            #invest_object_list << prepare_property_types_list(invest_object) #THIS?
+
+
+         elsif invest_area[:area_type] == 2  # мощность
+
+            power_object_list << prepare_power_object_json_part(invest_area, addr)
+
+         elsif invest_area[:area_type] == 3  # месторождение
+
+            field_object_list << prepare_field_object_json_part(invest_area, addr)
+
+         end
+      end
+
+      result_hash = {
+         investObjects: invest_object_list,
+         electicSubstations: power_object_list,
+         landResources: field_object_list,
+      }
+
+
+      file_name = "common"
+      put_json_to_file(file_name, result_hash, from_ftp: from_ftp)
+      put_data_to_xls(result_hash, from_ftp: from_ftp)
+   end
+
+
+def self.prepare_suggestions_for_using_list(obj) #THIS?
          list = USING_SITE_SUGGESTION_LIST
             list.each do |suggestion|
-               byebug
                next if obj[:data].keys.include?(:"#{suggestion[:name_eng]}")
                obj[:data][:"#{suggestion[:name_eng]}"]  = prepare_json_part("#{suggestion[:name]}",
                                                                         "#{suggestion[:name_eng].gsub('_',' ').capitalize}","-",false,"","text")
             end
-         byebug
          return obj
       end
 
-      def self.prepare_property_types_list(obj)
+      def self.prepare_property_types_list(obj) #THIS?
          types_list = OWNERSHIP_TYPE_LIST
          types_list.each do |property_type|
-            byebug
             next if obj[:data].keys.include?(:"#{property_type[:name_eng]}")
             obj[:data][:"#{property_type[:name_eng]}"]  = prepare_json_part("#{property_type[:name]}",
                                                                          "#{property_type[:name_eng].gsub('_',' ').capitalize}","-",false,"","text")
          end
-         byebug
          return obj
       end
